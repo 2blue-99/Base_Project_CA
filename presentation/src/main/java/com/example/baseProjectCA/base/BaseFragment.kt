@@ -35,12 +35,12 @@ abstract class BaseFragment<T: ViewDataBinding>(
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this.viewLifecycleOwner
         initUI()
+        initListener()
+        initObserver()
     }
 
     override fun onResume() {
         super.onResume()
-        initListener()
-        initObserver()
     }
 
     abstract fun initData()
